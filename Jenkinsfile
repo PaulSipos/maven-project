@@ -10,6 +10,11 @@ pipeline  {
         sh "mvn -v"
       }
     }
+    stage ('Build Package with Maven'){
+      steps {
+        sh "mvn package"
+      }
+    }
 
   }
 }
