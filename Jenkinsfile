@@ -6,10 +6,10 @@ pipeline  {
   stages {
     stage ('Check Maven Installation'){
 
-      step {
+      steps {
         sh "mvn -v"
       }
     }
-  
+
   }
 }
