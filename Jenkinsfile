@@ -16,5 +16,11 @@ pipeline  {
       }
     }
 
+    stage ('Archive the package'){
+      steps {
+        archiveArtifacts artifacts: 'target/gs-maven-*.jar', fingerprint: true, onlyIfSuccessful: true
+      }
+    }
+
   }
 }
