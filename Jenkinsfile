@@ -10,6 +10,11 @@ pipeline  {
         sh "mvn -v"
       }
     }
+    stage  ('Running Unit Tests'){
+      steps {
+        sh "mvn test"
+      }
+    }
     stage ('Build Package with Maven'){
       steps {
         sh "mvn package"
