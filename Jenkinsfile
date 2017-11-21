@@ -13,8 +13,7 @@ pipeline  {
     stage  ('Running Unit Tests'){
       steps {
         sh "mvn test"
-        junit ""
-      }
+        }
     }
     stage ('Build Package with Maven'){
       steps {
