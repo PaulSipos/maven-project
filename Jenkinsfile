@@ -22,6 +22,7 @@ pipeline  {
       post {
         success {
           archiveArtifacts artifacts: 'target/gs-maven-*.jar', fingerprint: true, onlyIfSuccessful: true
+        sh "echo 'Artifact succesfully Archived!'"
         }
       }
     }
