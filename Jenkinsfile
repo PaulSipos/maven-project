@@ -13,17 +13,17 @@ pipeline  {
     stage  ('Running Unit Tests'){
       steps {
         sh "mvn test"
+        junit ""
       }
     }
     stage ('Build Package with Maven'){
       steps {
         sh "mvn package"
       }
-    }
-
-    stage ('Archive the package'){
-      steps {
-        archiveArtifacts artifacts: 'target/gs-maven-*.jar', fingerprint: true, onlyIfSuccessful: true
+      post {
+        success {
+          archiveArtifacts artifacts: 'target/gs-maven-*.jar', fingerprint: true, onlyIfSuccessful: true
+        }
       }
     }
 
