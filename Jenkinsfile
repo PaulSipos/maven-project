@@ -16,6 +16,11 @@ pipeline  {
         junit 'target/surefire-reports/TEST-hello.GreeterTest.xml'
         }
     }
+    stage ('Checking docker Install') {
+      steps {
+        sh "docker run hello-world"
+      }
+    }
     stage ('Build Package with Maven'){
       steps {
         sh "mvn package"
