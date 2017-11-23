@@ -13,6 +13,7 @@ pipeline  {
     stage  ('Running Unit Tests'){
       steps {
         sh "mvn test"
+        junit 'target/surefire-reports/TEST-hello.GreeterTest.xml'
         }
     }
     stage ('Build Package with Maven'){
