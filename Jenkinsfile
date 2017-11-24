@@ -3,6 +3,9 @@ pipeline  {
       label 'slave1'
   }
 
+  options {
+    buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '2'))
+  }
   stages {
     stage ('Check Maven Installation'){
 
